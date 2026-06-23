@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><!-- Global metadata --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.18.1"><!-- Theme color --><meta name="theme-color" content="#09111d" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)"><!-- Canonical --><link rel="canonical" href="https://c5-jpg.github.io/posts/turboquant-cun-chu-shi-chang-ying-xiang/"><!-- Sitemap & RSS --><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="260516 // tech notes" href="/rss.xml"><!-- Primary Meta Tags --><title>TurboQuant 之后，存储市场真的要降温吗？ · 260516 // tech notes</title><meta name="title" content="TurboQuant 之后，存储市场真的要降温吗？ · 260516 // tech notes"><meta name="description" content="从谷歌 3 月底论文、存储股短线大跌到杰文斯悖论，解释为什么算法压缩不等于硬件需求消失"><meta name="author" content="260516"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://c5-jpg.github.io/posts/turboquant-cun-chu-shi-chang-ying-xiang/"><meta property="og:title" content="TurboQuant 之后，存储市场真的要降温吗？ · 260516 // tech notes"><meta property="og:description" content="从谷歌 3 月底论文、存储股短线大跌到杰文斯悖论，解释为什么算法压缩不等于硬件需求消失"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://c5-jpg.github.io/posts/turboquant-cun-chu-shi-chang-ying-xiang/"><meta property="twitter:title" content="TurboQuant 之后，存储市场真的要降温吗？ · 260516 // tech notes"><meta property="twitter:description" content="从谷歌 3 月底论文、存储股短线大跌到杰文斯悖论，解释为什么算法压缩不等于硬件需求消失"><!-- Inline theme bootstrap: avoid FOUC, no JS framework needed --><script>
+  (function () {
+    try {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored ?? (prefersDark ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    } catch (_) {
+      /* ignore */
+    }
+  })();
+</script><link rel="stylesheet" href="/_astro/_slug_.CypNwMID.css"></head> <body class="min-h-screen flex flex-col"> <header class="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-bg)_88%,transparent)] backdrop-blur"> <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-4 sm:px-6"> <a href="/" class="group inline-flex items-center gap-2 font-mono text-sm font-semibold hover:opacity-85"> <span class="grid size-7 place-items-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent)] shadow-sm">$</span> <span class="whitespace-nowrap">260516 <span class="hidden sm:inline">// tech notes</span></span> </a> <nav class="flex shrink-0 items-center gap-0 text-sm sm:gap-1"> <a href="/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 首页 </a><a href="/posts/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 bg-[var(--color-panel)] text-[var(--color-fg)]"> 文章 </a><a href="/tags/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 标签 </a><a href="/about/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 关于 </a> <button id="theme-toggle" type="button" aria-label="Toggle theme" class="ml-1 inline-flex size-8 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] shadow-sm transition-colors hover:text-[var(--color-fg)]"> <svg class="size-4 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path> </svg> <svg class="hidden size-4 dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path> </svg> </button> </nav> </div> </header> <script>
+  (function () {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.classList.toggle('dark') ? 'dark' : 'light';
+      try {
+        localStorage.setItem('theme', next);
+      } catch (_) {}
+    });
+  })();
+</script> <main class="mx-auto w-full max-w-5xl flex-1 px-5 py-10 sm:px-6 lg:py-14">  <article class="mx-auto max-w-3xl"> <header class="mb-10 border-b border-[var(--color-border)] pb-7"> <h1 class="mb-4 text-3xl font-bold leading-tight text-[var(--color-fg)] sm:text-4xl"> TurboQuant 之后，存储市场真的要降温吗？ </h1> <p class="mb-5 text-base leading-7 text-[var(--color-muted)]">从谷歌 3 月底论文、存储股短线大跌到杰文斯悖论，解释为什么算法压缩不等于硬件需求消失</p> <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-[var(--color-muted)]"> <span>by 260516</span> <span>·</span> <time datetime="2026-06-23T00:00:00.000Z">Jun 23, 2026</time>  </div> <ul class="mt-4 flex flex-wrap gap-2"> <li> <a href="/tags/TurboQuant/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#TurboQuant </a> </li><li> <a href="/tags/存储/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#存储 </a> </li><li> <a href="/tags/DRAM/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#DRAM </a> </li><li> <a href="/tags/NAND/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#NAND </a> </li><li> <a href="/tags/AI/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#AI </a> </li> </ul> </header> <div class="prose prose-zinc max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-semibold prose-pre:text-sm">  <p><img src="/assets/turboquant-storage-cover.png" alt="内存模组、企业级 SSD 与向量压缩图层"></p>
+<p>2026 年 3 月底，存储市场被 Google 的一篇研究博客打了一闷棍。</p>
+<p>3 月 24 日，Google Research 发布 TurboQuant，标题很直接：用极限压缩重新定义 AI 效率。技术点并不玄学：大模型推理时，长上下文会产生庞大的 KV Cache。KV Cache 是模型“记住刚才对话”的短期记忆，尤其在长文本、多轮对话、Agent 调用和高并发服务里，会迅速吃掉显存、HBM 和服务器内存。</p>
+<p>Google 给出的实验结果很强：TurboQuant 可以把 KV Cache 压到 3 bit，长上下文任务里 key-value memory size 至少降低 6 倍；在 H100 上，4-bit TurboQuant 计算 attention logits 的速度最高可比 32-bit unquantized keys 快 8 倍。arXiv 论文里更细：KV cache 量化在 3.5 bits per channel 可以做到“absolute quality neutrality”，2.5 bits per channel 也只是边际质量退化。</p>
+<p>资本市场第一反应很简单：如果模型内存需求少了 6 倍，那存储和内存公司是不是要少卖很多芯片？</p>
+<p>所以当时存储股大跌并不奇怪。真正值得分析的是：<strong>这个跌法是一个真实产业拐点，还是市场把“单位成本下降”误读成了“总需求下降”？</strong></p>
+<p>我的判断是后者。TurboQuant 更像是 AI 存储需求的杰文斯悖论，而不是存储周期的终点。</p>
+<hr>
+<h2 id="市场为什么会先杀存储股">市场为什么会先杀存储股</h2>
+<p>先看当时交易员脑子里的公式。</p>
+<p>过去一年，AI 数据中心的核心矛盾是内存不够。训练要 HBM，推理要 KV Cache，RAG 和向量数据库要企业级 SSD，模型检查点、日志、数据湖也都要存储。于是存储链条的定价逻辑变得很强：HBM 紧、DRAM 紧、NAND 企业盘也紧。</p>
+<p>这套逻辑有三个关键词：</p>
+<ol>
+<li><strong>需求刚性</strong>：AI 公司为了性能和规模，必须买内存和存储。</li>
+<li><strong>供给滞后</strong>：HBM、先进封装、企业级 SSD 产能扩张都不是几周能完成的。</li>
+<li><strong>议价权上移</strong>：三星、SK 海力士、美光这类厂商从周期底部重新拿回定价权。</li>
+</ol>
+<p>TurboQuant 刚好打在第一个关键词上。</p>
+<p>如果 KV Cache 可以压到原来的六分之一，投资者会立刻担心：云厂商是否会推迟采购？HBM 增速是否下修？DRAM 和 NAND 的涨价故事是否到头？</p>
+<p>TechRadar 后来的复盘也提到，TurboQuant 在 3 月 24 日公布时，存储厂商股价确实出现过一轮明显下挫，因为市场把它理解成对未来利润的潜在打击。这种交易反应是合理的：存储股当时已经包含了“AI 吞噬一切内存”的乐观预期，任何效率突破都会触发估值回撤。</p>
+<p>但合理，不代表正确。</p>
+<hr>
+<h2 id="turboquant-改变的是单位消耗不是使用欲望">TurboQuant 改变的是单位消耗，不是使用欲望</h2>
+<p>这里要分清两个概念：单位需求和总需求。</p>
+<p>TurboQuant 解决的是单位任务需要多少 KV Cache。它让同样一次长上下文推理变得更省内存、更快、更便宜。但它没有解决另一个问题：当推理变便宜之后，应用会不会变得更奢侈？</p>
+<p>AI 行业的答案通常是：会。</p>
+<p>过去一个聊天机器人只需要回答一句话；现在它要读取完整文档、检索数据库、调用工具、保留多轮上下文。过去一个代码助手只看当前文件；现在它要读完整仓库、理解 issue、跑测试、生成 PR。过去一个企业知识库只做搜索；现在它要做权限校验、引用溯源、流程审批和自动执行。</p>
+<p>这些功能都在吞上下文、吞并发、吞检索、吞存储。</p>
+<p>所以 TurboQuant 释放出来的资源，大概率不会长期闲置在服务器里。它会被新的产品能力吃掉：更长上下文、更高并发、更低延迟、更复杂 Agent、更便宜 API 定价，以及更大规模的用户覆盖。</p>
+<p>这就是杰文斯悖论。</p>
+<p>煤炭时代，蒸汽机效率提高没有让英国少烧煤，反而让更多行业开始使用煤。AI 时代，KV Cache 压缩也未必会让数据中心少买内存，反而可能让更多 AI 应用从“不经济”变成“可以上线”。</p>
+<p><strong>效率提升不是需求的天花板，而是需求的地板被抬起来。</strong></p>
+<hr>
+<h2 id="为什么我认为这是杰文斯悖论交易">为什么我认为这是“杰文斯悖论交易”</h2>
+<p>当时我对存储股大跌的判断是：市场把一个供给侧效率变量，误读成了总需求收缩变量。</p>
+<p>这两个变量区别很大。</p>
+<p>如果 TurboQuant 发生在一个需求饱和的行业，比如某种成熟办公软件，那效率提升确实可能直接减少硬件购买。因为用户的使用量已经差不多到顶，节省下来的资源很难被新需求吸收。</p>
+<p>但 AI 不是成熟行业。AI 应用的真实需求还被成本压着，没有完全释放。</p>
+<p>很多产品不是没人想做，而是太贵：</p>
+<ol>
+<li>每个用户保留长期记忆太贵；</li>
+<li>每次回答读取全量企业文档太贵；</li>
+<li>让 Agent 连续跑几十步太贵；</li>
+<li>视频、多模态、代码仓库级上下文太贵；</li>
+<li>中小企业每天高频调用大模型太贵。</li>
+</ol>
+<p>当 KV Cache 成本下降，这些“不经济”的需求会被重新打开。云厂商不会满足于“同样服务更省钱”，它们更可能把节省出来的内存转换成“同样硬件跑更多服务”。这也是三星证券分析师 Lee Jong-wook 的观点：更高效的模型会降低整体成本，反过来推动更大的 AI 计算需求；优化模型不是减少半导体需求，而是用同样芯片资源交付更高性能 AI 服务。</p>
+<p>Hana Securities 的 Kim Rok-ho 也给了类似判断：即便压缩技术中长期被广泛采用，也会降低内存成本门槛、扩大 AI 总使用量，DRAM 和存储需求下降的概率有限。</p>
+<p>我认为这基本说中了三月底那次下跌的核心矛盾：短线资金按“单次推理内存下降”卖存储股，产业逻辑却更接近“单次推理成本下降，AI 服务总量上升”。</p>
+<hr>
+<h2 id="dramhbmnand-不能混成一个故事">DRAM、HBM、NAND 不能混成一个故事</h2>
+<p>很多人说“存储市场”时，其实把三类东西混在了一起：HBM/显存、服务器 DRAM、NAND/企业级 SSD。</p>
+<p>TurboQuant 对它们的影响并不一样。</p>
+<p>对 HBM 和 GPU 显存，影响最直接。KV Cache 就是推理时的高带宽内存压力来源之一。压缩能让同一张卡承载更长上下文或更多并发，所以短期会压低单位 token 对显存的需求。</p>
+<p>但 HBM 的需求来源不止 KV Cache。训练、MoE、推理 batch、多模态、视频生成、强化学习、在线服务冗余都会继续消耗带宽。尤其模型公司如果竞争重点仍是性能而不是省钱，那么节省下来的 HBM 空间会优先被拿去做更强体验，而不是少买卡。</p>
+<p>对服务器 DRAM，影响更间接。DRAM 不只服务模型本体，还服务 CPU 侧调度、向量检索、缓存层、数据库、日志处理、数据预处理。TurboQuant 能降低 KV Cache 压力，但不会让 AI 集群里的非模型内存需求消失。</p>
+<p>对 NAND 和企业级 SSD，短线情绪冲击最大，长期直接影响反而最小。因为 SSD 需求来自训练数据、模型检查点、向量数据库、日志、RAG 文档库、视频素材、备份和数据湖。KV Cache 压缩不等于企业少存数据。</p>
+<p>所以，如果把 TurboQuant 当成“所有存储需求下降”，那就是过度外推。</p>
+<p>更准确的结论应该是：<strong>TurboQuant 降低推理缓存瓶颈，改变 AI 基础设施内部的成本结构，但不直接终结 DRAM、HBM 和 NAND 的总量增长。</strong></p>
+<hr>
+<h2 id="数据该怎么看">数据该怎么看</h2>
+<p>我会用三个数据锚点来判断这件事。</p>
+<p>第一个锚点是压缩倍率。Google 博客给的是 key-value memory size 至少下降 6 倍、3 bit KV Cache、4-bit attention logits 最高 8 倍速度提升。这个数据足够解释为什么市场会恐慌：它不是 5% 的小优化，而是会改变成本模型的大幅压缩。</p>
+<p>第二个锚点是采用路径。arXiv 论文强调的是在线向量量化和近最优失真率，但从论文到生产要经历框架适配、模型验证、精度监控、服务稳定性和回滚机制。三月底股价可以一天反应，数据中心采购不会一天重写。</p>
+<p>第三个锚点是需求弹性。如果未来几个季度云厂商的 CapEx、HBM 订单、企业级 SSD 合约价继续强，那么 TurboQuant 就会被证明是“效率提高但需求更大”的杰文斯悖论；如果订单明显下修，才说明市场当时的杀跌是提前定价。</p>
+<p>现在更值得押注的不是“存储彻底没需求”，而是“存储公司会分化”：只靠缺货涨价讲故事的公司风险上升；能绑定 AI 推理、HBM、企业级 SSD、CXL、数据中心系统优化的公司，反而会受益于更大的 AI 使用量。</p>
+<hr>
+<h2 id="我的结论">我的结论</h2>
+<p>三月底存储股被 TurboQuant 砸下来，表面上是技术利空，深层是市场对 AI 硬件需求曲线的重新估值。</p>
+<p>但我不认为这是存储市场长期反转。</p>
+<p>它更像一次典型的杰文斯悖论交易：算法把单次推理变便宜，资本市场先按“少卖芯片”交易，产业最后可能按“更多 AI 服务上线”兑现。</p>
+<p>TurboQuant 的真正影响不是让内存不重要，而是让内存的价值从“单纯容量”转向“能支撑多少有效智能服务”。未来的核心问题不是 AI 还需不需要存储，而是谁能用更便宜、更快、更高效的存储和内存，把 AI 应用推到更大规模。</p>
+<p>所以，我当时的判断是：存储股短线杀跌可以理解，但不能把它当作行业需求崩塌。相反，如果 AI 使用量因为成本下降继续放大，这次下跌更可能是市场把杰文斯悖论看反了。</p>
+<hr>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/">Google Research: TurboQuant, redefining AI efficiency with extreme compression</a></li>
+<li><a href="https://arxiv.org/abs/2504.19874">arXiv: TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate</a></li>
+<li><a href="https://www.techradar.com/computing/memory/turboquant-isnt-the-ram-crisis-savior-youre-hoping-for-analysts-say-as-memory-prices-continue-to-look-bleak">TechRadar: TurboQuant isn’t the RAM crisis savior analysts say</a></li>
+</ul>  </div> </article>  </main> <footer class="mt-24 border-t border-[var(--color-border)] py-8 text-sm text-[var(--color-muted)]"> <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-5 sm:flex-row sm:px-6"> <p class="font-mono">© 2026 260516. AI market notes.</p> <div class="flex items-center gap-4"> <a href="/rss.xml" class="hover:text-[var(--color-fg)]">RSS</a> <a href="/sitemap-index.xml" class="hover:text-[var(--color-fg)]">Sitemap</a> </div> </div> </footer> </body></html>

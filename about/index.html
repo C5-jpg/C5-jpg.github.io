@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><!-- Global metadata --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.18.1"><!-- Theme color --><meta name="theme-color" content="#09111d" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)"><!-- Canonical --><link rel="canonical" href="https://c5-jpg.github.io/about/"><!-- Sitemap & RSS --><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="260516 // tech notes" href="/rss.xml"><!-- Primary Meta Tags --><title>About · 260516 // tech notes</title><meta name="title" content="About · 260516 // tech notes"><meta name="description" content="AI 产业链、资本市场与技术基础设施的个人研究笔记。"><meta name="author" content="260516"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://c5-jpg.github.io/about/"><meta property="og:title" content="About · 260516 // tech notes"><meta property="og:description" content="AI 产业链、资本市场与技术基础设施的个人研究笔记。"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://c5-jpg.github.io/about/"><meta property="twitter:title" content="About · 260516 // tech notes"><meta property="twitter:description" content="AI 产业链、资本市场与技术基础设施的个人研究笔记。"><!-- Inline theme bootstrap: avoid FOUC, no JS framework needed --><script>
+  (function () {
+    try {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored ?? (prefersDark ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    } catch (_) {
+      /* ignore */
+    }
+  })();
+</script><link rel="stylesheet" href="/_astro/_slug_.CypNwMID.css"></head> <body class="min-h-screen flex flex-col"> <header class="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-bg)_88%,transparent)] backdrop-blur"> <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-4 sm:px-6"> <a href="/" class="group inline-flex items-center gap-2 font-mono text-sm font-semibold hover:opacity-85"> <span class="grid size-7 place-items-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent)] shadow-sm">$</span> <span class="whitespace-nowrap">260516 <span class="hidden sm:inline">// tech notes</span></span> </a> <nav class="flex shrink-0 items-center gap-0 text-sm sm:gap-1"> <a href="/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 首页 </a><a href="/posts/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 文章 </a><a href="/tags/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 标签 </a><a href="/about/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 bg-[var(--color-panel)] text-[var(--color-fg)]"> 关于 </a> <button id="theme-toggle" type="button" aria-label="Toggle theme" class="ml-1 inline-flex size-8 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] shadow-sm transition-colors hover:text-[var(--color-fg)]"> <svg class="size-4 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path> </svg> <svg class="hidden size-4 dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path> </svg> </button> </nav> </div> </header> <script>
+  (function () {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.classList.toggle('dark') ? 'dark' : 'light';
+      try {
+        localStorage.setItem('theme', next);
+      } catch (_) {}
+    });
+  })();
+</script> <main class="mx-auto w-full max-w-5xl flex-1 px-5 py-10 sm:px-6 lg:py-14">  <article class="prose prose-zinc mx-auto max-w-3xl dark:prose-invert"> <h1>关于</h1> <p>
+这里是 <strong>260516</strong> 的个人技术与市场笔记，主要关注 AI
+      产业链、模型基础设施、半导体供需、量化金融和工程系统。
+</p> <p>
+我会把论文、新闻、财报和供应链信息整理成更可读的判断：技术变化如何影响公司、
+      行业和资本市场。本站使用 <a href="https://astro.build">Astro</a>
+与 <a href="https://tailwindcss.com">Tailwind CSS v4</a> 构建。
+</p> <h2>写作方向</h2> <ul> <li><strong>模型系统：</strong>大模型、Agent、推理成本和工程架构。</li> <li><strong>硬件供应链：</strong>GPU、HBM、DRAM、NAND 与先进封装。</li> <li><strong>市场分析：</strong>AI 公司估值、产业周期和量化信号。</li> </ul> </article>  </main> <footer class="mt-24 border-t border-[var(--color-border)] py-8 text-sm text-[var(--color-muted)]"> <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-5 sm:flex-row sm:px-6"> <p class="font-mono">© 2026 260516. AI market notes.</p> <div class="flex items-center gap-4"> <a href="/rss.xml" class="hover:text-[var(--color-fg)]">RSS</a> <a href="/sitemap-index.xml" class="hover:text-[var(--color-fg)]">Sitemap</a> </div> </div> </footer> </body></html>

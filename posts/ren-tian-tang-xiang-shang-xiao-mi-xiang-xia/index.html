@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><!-- Global metadata --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.18.1"><!-- Theme color --><meta name="theme-color" content="#09111d" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)"><!-- Canonical --><link rel="canonical" href="https://c5-jpg.github.io/posts/ren-tian-tang-xiang-shang-xiao-mi-xiang-xia/"><!-- Sitemap & RSS --><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="260516 // tech notes" href="/rss.xml"><!-- Primary Meta Tags --><title>任天堂向上，小米向下 · 260516 // tech notes</title><meta name="title" content="任天堂向上，小米向下 · 260516 // tech notes"><meta name="description" content="从 Switch 2 涨价看 AI 时代半导体供应链的权力转移"><meta name="author" content="260516"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://c5-jpg.github.io/posts/ren-tian-tang-xiang-shang-xiao-mi-xiang-xia/"><meta property="og:title" content="任天堂向上，小米向下 · 260516 // tech notes"><meta property="og:description" content="从 Switch 2 涨价看 AI 时代半导体供应链的权力转移"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://c5-jpg.github.io/posts/ren-tian-tang-xiang-shang-xiao-mi-xiang-xia/"><meta property="twitter:title" content="任天堂向上，小米向下 · 260516 // tech notes"><meta property="twitter:description" content="从 Switch 2 涨价看 AI 时代半导体供应链的权力转移"><!-- Inline theme bootstrap: avoid FOUC, no JS framework needed --><script>
+  (function () {
+    try {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored ?? (prefersDark ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    } catch (_) {
+      /* ignore */
+    }
+  })();
+</script><link rel="stylesheet" href="/_astro/_slug_.CypNwMID.css"></head> <body class="min-h-screen flex flex-col"> <header class="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-bg)_88%,transparent)] backdrop-blur"> <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-4 sm:px-6"> <a href="/" class="group inline-flex items-center gap-2 font-mono text-sm font-semibold hover:opacity-85"> <span class="grid size-7 place-items-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent)] shadow-sm">$</span> <span class="whitespace-nowrap">260516 <span class="hidden sm:inline">// tech notes</span></span> </a> <nav class="flex shrink-0 items-center gap-0 text-sm sm:gap-1"> <a href="/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 首页 </a><a href="/posts/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 bg-[var(--color-panel)] text-[var(--color-fg)]"> 文章 </a><a href="/tags/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 标签 </a><a href="/about/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 关于 </a> <button id="theme-toggle" type="button" aria-label="Toggle theme" class="ml-1 inline-flex size-8 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] shadow-sm transition-colors hover:text-[var(--color-fg)]"> <svg class="size-4 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path> </svg> <svg class="hidden size-4 dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path> </svg> </button> </nav> </div> </header> <script>
+  (function () {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.classList.toggle('dark') ? 'dark' : 'light';
+      try {
+        localStorage.setItem('theme', next);
+      } catch (_) {}
+    });
+  })();
+</script> <main class="mx-auto w-full max-w-5xl flex-1 px-5 py-10 sm:px-6 lg:py-14">  <article class="mx-auto max-w-3xl"> <header class="mb-10 border-b border-[var(--color-border)] pb-7"> <h1 class="mb-4 text-3xl font-bold leading-tight text-[var(--color-fg)] sm:text-4xl"> 任天堂向上，小米向下 </h1> <p class="mb-5 text-base leading-7 text-[var(--color-muted)]">从 Switch 2 涨价看 AI 时代半导体供应链的权力转移</p> <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-[var(--color-muted)]"> <span>by 260516</span> <span>·</span> <time datetime="2026-05-28T00:00:00.000Z">May 28, 2026</time>  </div> <ul class="mt-4 flex flex-wrap gap-2"> <li> <a href="/tags/任天堂/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#任天堂 </a> </li><li> <a href="/tags/小米/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#小米 </a> </li><li> <a href="/tags/AI/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#AI </a> </li><li> <a href="/tags/半导体/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#半导体 </a> </li><li> <a href="/tags/供应链/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#供应链 </a> </li> </ul> </header> <div class="prose prose-zinc max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-semibold prose-pre:text-sm">  <p><img src="/assets/pasted-image-20260528233621.png" alt="The memory crunch comes at an inopportune time for companies like Nintendo. Richard A. Brooks/AFP/Getty Images"></p>
+<p>The memory crunch comes at an inopportune time for companies like Nintendo. Richard A. Brooks/AFP/Getty Images</p>
+<p>2026年5月8日，任天堂社长古川俊太郎签了一份不太体面的报告。</p>
+<p>Switch 2要涨价了。日本市场从49,980日元调到59,980日元，美国从449.99美元涨到499.99美元，欧洲也跟进。距离新主机上市还不到一年，还在生命周期的最早期——这通常是厂商拼命压低价格、抢装机量的时候。任天堂反而把门槛抬高了。</p>
+<p>古川给出的解释很官方：零部件成本上涨、关税、汇率。但真正让资本市场紧张的是后面那句——这些因素预计给当前财年增加约1,000亿日元的成本。消息公布后，任天堂股价一度跌了7%。</p>
+<p>玩家愤怒，投资人恐慌。但很少有人问一个更本质的问题：<strong>钱到底去哪儿了？</strong></p>
+<p>答案不在京都，不在东京，甚至不在任天堂的供应链名单上。它在数据中心的机房里。</p>
+<hr>
+<h2 id="存储芯片的ai溢价让游戏机成了最无辜的受害者">存储芯片的”AI溢价”，让游戏机成了最无辜的受害者</h2>
+<p>如果你在过去一年听过”HBM""CoWoS""企业级SSD”这些词，你就已经接触到问题的核心了。</p>
+<p>简单来说，AI数据中心正在疯狂吞掉两种东西：高性能DRAM（也就是HBM）和大容量NAND闪存（企业级SSD）。全球几大存储厂商——三星、SK海力士、美光、铠侠——都面临同一个选择：是把产能卖给云厂商，签三年长协、锁量锁价、毛利超过50%；还是卖给任天堂，做Switch 2里的UFS闪存，单价低、周期波动大、还得随时应付砍单？</p>
+<p><img src="/assets/pasted-image-20260528233718.png" alt="存储芯片价格走势"></p>
+<p>答案不言自明。</p>
+<p>2026年第一季度，路透社报道存储芯片价格已较上一季度翻倍。TrendForce在3月底的预测更具体：第二季度常规DRAM合约价预计再涨58-63%，NAND闪存涨70-75%。注意，这还是”常规”产品——已经被AI挤到第二梯队的那些。</p>
+<p>Switch 2用的是256GB UFS，属于常规NAND。它没有资格跟AI抢产能，只能被动承受价格。</p>
+<p>这就是任天堂的困境：<strong>它卖的每一台机器，都在为AI数据中心的狂欢买单。</strong></p>
+<p><img src="/assets/pasted-image-20260528233530.png" alt="Nintendo began selling the Switch 2 console in June, aiming to build on the success of its predecessor. Philip Fong/Agence France-Presse/Getty Images"></p>
+<p>Nintendo began selling the Switch 2 console in June, aiming to build on the success of its predecessor. Philip Fong/Agence France-Presse/Getty Images</p>
+<hr>
+<h2 id="先进封装另一个看不见的窄门">先进封装：另一个看不见的窄门</h2>
+<p>如果你以为只有存储芯片被抢，那就低估了AI对供应链的统治力。</p>
+<p>高端AI加速卡——比如NVIDIA的下一代GPU——不仅需要HBM，还需要一种叫”CoWoS”的先进封装技术。简单说，就是把逻辑芯片和HBM堆叠在一起，让它们高速通信。台积电的CoWoS产能，是全球AI芯片的咽喉。</p>
+<p>这个窄门跟任天堂有关系吗？</p>
+<p>有。因为封装不是只有CoWoS一种。封装工程资源——包括基板、中介层、测试设备、熟练工程师——是有限的。当台积电和日月光把最优的团队、最先进的设备、最稳定的供应链全部倾斜给AI客户时，消费电子厂商能得到的就是”剩下的”。封装交期拉长、良率波动、议价能力下降——这些都最终体现在BOM成本里。</p>
+<p>所以任天堂涨价不是一个单一原因的故事。它是存储涨价+封装紧张+关税+汇率+物流+屏幕成本的复合结果。但所有这些压力的共同源头，是同一个：<strong>AI数据中心正在以”利润优先”的原则，重新排序整个半导体供应链的优先级。</strong></p>
+<p><img src="/assets/pasted-image-20260528233839.png" alt="A silicon wafer with Micron Technology Inc.&#x27;s 1-gamma DRAM process node on display at the Micron Memory Japan K.K. booth at the Semicon Japan exhibition in Tokyo, Japan, on Thursday, Dec. 18, 2025. Kiyoshi Ota/Bloomberg via Getty Images"></p>
+<p>A silicon wafer with Micron Technology Inc.’s 1-gamma DRAM process node on display at the Micron Memory Japan K.K. booth at the Semicon Japan exhibition in Tokyo, Japan, on Thursday, Dec. 18, 2025. Kiyoshi Ota/Bloomberg via Getty Images</p>
+<hr>
+<h2 id="任天堂的护城河挡不住物理成本">任天堂的护城河，挡不住物理成本</h2>
+<p>任天堂从来不是一家靠硬件赚钱的公司。</p>
+<p>截至2026年3月底，Switch 2累计销量1,986万台，软件销量4,871万份。上一代Switch更是卖出了1.55亿台硬件和15亿份软件。任天堂的商业模式很清楚：硬件是入口，亏本卖也行，只要装机量够了，软件、会员、DLC、授权衍生品能把钱成倍赚回来。</p>
+<p>但这条路径有一个前提：<strong>入口不能太贵。</strong></p>
+<p>Switch 2涨价50美元，看起来不多，但对于一个价格敏感的用户群体——家庭用户、儿童、轻度玩家——这可能是犹豫的关键。路透社采访的分析师也指出，任天堂的休闲用户对价格比索尼或微软的用户更敏感。如果装机量增速放缓，软件销售基数就会缩小，第三方开发者信心下降，整个飞轮转不起来。</p>
+<p>这才是涨价真正危险的地方：不是少赚一台机器的钱，而是可能破坏那个”硬件—软件—IP”的正向循环。</p>
+<p>古川俊太郎的难题是：不涨价，1,000亿日元的成本压下来，硬件毛利直接变负；涨价，装机量斜率变缓，未来几年的软件收入可能打折扣。</p>
+<p>两个选择都疼。</p>
+<p><img src="/assets/pasted-image-20260528234000.png" alt="Nintendo Switch 2 芯片拆解"></p>
+<p>source: <a href="https://www.ifixit.com/Guide/Nintendo+Switch+2+Chip+ID/188725?utm_source=chatgpt.com">https://www.ifixit.com/Guide/Nintendo+Switch+2+Chip+ID/188725?utm_source=chatgpt.com</a></p>
+<hr>
+<h2 id="小米的反面从卖硬件到卖服务的另一种答案">小米的反面：从”卖硬件”到”卖服务”的另一种答案</h2>
+<p>任天堂的故事如果只有一半，那就是”AI让硬件变贵”。但如果只讲这个，就会错过一个更重要的趋势：<strong>有些公司正在用软件和算法，把硬件成本的压力反向消化掉。</strong></p>
+<p>2026年5月27日，小米MiMo API平台宣布永久降价，最高降幅99%。这不是噱头。它说明一件事：大模型推理侧，通过缓存、调度、模型压缩、规模化调用，成本是可以被快速摊薄的。当开发者调用AI能力的价格几乎降到零，小米可以把更多人留在自己的操作系统、智能汽车、IoT设备里。</p>
+<p>但这是不是意味着”软件消灭硬件成本”？不是。</p>
+<p>以智能驾驶为例，小米的World Model技术确实可以降低真实路测依赖、提高长尾场景训练效率。但车还是要装激光雷达、摄像头、计算平台、存储芯片、散热系统。算法可以优化”每TOPS能做什么”，但不能让物理芯片免费。</p>
+<p>小米真正的优势，是它不像任天堂那样只有一个硬件入口。手机、汽车、家电、AI服务——多终端生态意味着成本可以分摊，用户可以在不同场景下被交叉变现。一台手机亏了，可能从IoT里赚回来；汽车毛利薄了，可以从智能驾驶订阅里补。</p>
+<p><img src="/assets/pasted-image-20260528234143.png" alt="小米生态"></p>
+<p>任天堂没有这个选项。它的生态半径是”Mario、Zelda、Pokémon”，是极致独占的体验，但也因此被锁定在游戏机这个单一硬件上。当那个硬件变贵，它没有别的出口可以缓冲。</p>
+<hr>
+<h2 id="从涨价读出真正的投资逻辑">从涨价读出真正的投资逻辑</h2>
+<p>任天堂的涨价值得记住，不是因为它是一个多大的新闻，而是因为它是一个标志。</p>
+<p>标志着一个时代的切换：<strong>过去二十年，消费电子厂商享受的”摩尔定律红利”——性能翻倍、价格下降——正在被AI数据中心以更高的毛利、更长的合同、更强的议价权重新分配。</strong></p>
+<p>存储芯片不再只是周期品，而是AI基础设施的核心资产。美光市值在2026年5月突破1万亿美元，2026年HBM产能已全部售罄。资本市场正在重新定价：谁在AI供应链里做价格制定者，谁在做价格接受者？</p>
+<p>任天堂是后者。而且它不是唯一一个。索尼、微软、小米、几乎所有消费电子终端厂商，都在面对同一个拷问：你的护城河，能不能扛住物理成本的无差别攻击？</p>
+<p>对投资者来说，未来评估一家硬件公司，不要再问”它有没有AI故事”。要问三个更冷静的问题：</p>
+<p>第一，它在AI供应链里，是收钱的还是付钱的？
+第二，硬件涨价会不会伤害它未来的高毛利收入？
+第三，它有没有足够强的软件、服务或生态，来对冲硬件的毛利压缩？</p>
+<p>任天堂涨价不是终点。它只是第一块倒下的多米诺骨牌。接下来，手机、PC、汽车、智能家居——所有依赖存储芯片的终端，都会陆续感受到那股来自数据中心的推背感。</p>
+<p>只不过，有些公司会被推着往前走，有些会被推倒。</p>  </div> </article>  </main> <footer class="mt-24 border-t border-[var(--color-border)] py-8 text-sm text-[var(--color-muted)]"> <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-5 sm:flex-row sm:px-6"> <p class="font-mono">© 2026 260516. AI market notes.</p> <div class="flex items-center gap-4"> <a href="/rss.xml" class="hover:text-[var(--color-fg)]">RSS</a> <a href="/sitemap-index.xml" class="hover:text-[var(--color-fg)]">Sitemap</a> </div> </div> </footer> </body></html>

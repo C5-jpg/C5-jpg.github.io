@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><!-- Global metadata --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.18.1"><!-- Theme color --><meta name="theme-color" content="#09111d" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)"><!-- Canonical --><link rel="canonical" href="https://c5-jpg.github.io/posts/zhi-pu-gu-jia-yu-shi-chang-zhan-wang/"><!-- Sitemap & RSS --><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="260516 // tech notes" href="/rss.xml"><!-- Primary Meta Tags --><title>智谱被低估了吗？一次早于市场的模型测评与股价重估 · 260516 // tech notes</title><meta name="title" content="智谱被低估了吗？一次早于市场的模型测评与股价重估 · 260516 // tech notes"><meta name="description" content="从智谱产品体验、港股估值、商业化数据和 7 月解禁风险，看中国大模型公司的再定价"><meta name="author" content="260516"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://c5-jpg.github.io/posts/zhi-pu-gu-jia-yu-shi-chang-zhan-wang/"><meta property="og:title" content="智谱被低估了吗？一次早于市场的模型测评与股价重估 · 260516 // tech notes"><meta property="og:description" content="从智谱产品体验、港股估值、商业化数据和 7 月解禁风险，看中国大模型公司的再定价"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://c5-jpg.github.io/posts/zhi-pu-gu-jia-yu-shi-chang-zhan-wang/"><meta property="twitter:title" content="智谱被低估了吗？一次早于市场的模型测评与股价重估 · 260516 // tech notes"><meta property="twitter:description" content="从智谱产品体验、港股估值、商业化数据和 7 月解禁风险，看中国大模型公司的再定价"><!-- Inline theme bootstrap: avoid FOUC, no JS framework needed --><script>
+  (function () {
+    try {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored ?? (prefersDark ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    } catch (_) {
+      /* ignore */
+    }
+  })();
+</script><link rel="stylesheet" href="/_astro/_slug_.CypNwMID.css"></head> <body class="min-h-screen flex flex-col"> <header class="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-bg)_88%,transparent)] backdrop-blur"> <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-4 sm:px-6"> <a href="/" class="group inline-flex items-center gap-2 font-mono text-sm font-semibold hover:opacity-85"> <span class="grid size-7 place-items-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent)] shadow-sm">$</span> <span class="whitespace-nowrap">260516 <span class="hidden sm:inline">// tech notes</span></span> </a> <nav class="flex shrink-0 items-center gap-0 text-sm sm:gap-1"> <a href="/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 首页 </a><a href="/posts/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 bg-[var(--color-panel)] text-[var(--color-fg)]"> 文章 </a><a href="/tags/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 标签 </a><a href="/about/" class="whitespace-nowrap rounded-md px-2 py-1.5 transition-colors sm:px-3 text-[var(--color-muted)] hover:text-[var(--color-fg)]"> 关于 </a> <button id="theme-toggle" type="button" aria-label="Toggle theme" class="ml-1 inline-flex size-8 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] shadow-sm transition-colors hover:text-[var(--color-fg)]"> <svg class="size-4 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path> </svg> <svg class="hidden size-4 dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path> </svg> </button> </nav> </div> </header> <script>
+  (function () {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.classList.toggle('dark') ? 'dark' : 'light';
+      try {
+        localStorage.setItem('theme', next);
+      } catch (_) {}
+    });
+  })();
+</script> <main class="mx-auto w-full max-w-5xl flex-1 px-5 py-10 sm:px-6 lg:py-14">  <article class="mx-auto max-w-3xl"> <header class="mb-10 border-b border-[var(--color-border)] pb-7"> <h1 class="mb-4 text-3xl font-bold leading-tight text-[var(--color-fg)] sm:text-4xl"> 智谱被低估了吗？一次早于市场的模型测评与股价重估 </h1> <p class="mb-5 text-base leading-7 text-[var(--color-muted)]">从智谱产品体验、港股估值、商业化数据和 7 月解禁风险，看中国大模型公司的再定价</p> <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-[var(--color-muted)]"> <span>by 260516</span> <span>·</span> <time datetime="2026-06-23T00:00:00.000Z">Jun 23, 2026</time>  </div> <ul class="mt-4 flex flex-wrap gap-2"> <li> <a href="/tags/智谱/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#智谱 </a> </li><li> <a href="/tags/AI/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#AI </a> </li><li> <a href="/tags/大模型/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#大模型 </a> </li><li> <a href="/tags/港股/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#港股 </a> </li><li> <a href="/tags/估值/" class="rounded border border-[var(--color-border)] bg-[var(--color-panel)] px-2 py-0.5 font-mono text-[11px] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]">
+#估值 </a> </li> </ul> </header> <div class="prose prose-zinc max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-semibold prose-pre:text-sm">  <p><img src="/assets/zhipu-market-cover.png" alt="香港市场、数据中心与模型基础设施的复合场景"></p>
+<p>我对智谱这轮股价的判断，和单纯看 K 线的人不太一样。</p>
+<p>原因很简单：我不是等市场开始讨论它之后才去看，而是在市场重新定价前，就先做过一次产品和模型体验层面的测评。那次测评给我的感觉是：智谱并不是一个只靠“国产大模型概念”支撑的壳，它在模型能力、工程完成度、企业客户路径和开源影响力上，已经有一部分价值没有被股价充分反映。</p>
+<p>所以我想写的不是“智谱会不会涨”这种短线判断，而是一个更具体的问题：</p>
+<p><strong>如果智谱确实被低估，低估的到底是什么？如果市场之后重新定价，最大的阻力又在哪里？</strong></p>
+<p>我的答案是：智谱被低估的不是故事，而是“独立大模型公司里少数能同时拿出模型、客户、开源和产品体验”的稀缺性；但 7 月附近的 6 个月解禁，可能会给股价带来一轮真实供给冲击。</p>
+<hr>
+<h2 id="为什么我认为市场低估了智谱">为什么我认为市场低估了智谱</h2>
+<p>先讲估值。</p>
+<p>智谱 2026 年 1 月 8 日在港交所上市，发行价 116.20 港元，首日收盘 131.50 港元，较发行价上涨约 13.17%。按当时公开报道，IPO 募资约 43.5 亿港元，上市后市值大约在 500 亿港元量级。</p>
+<p>这个估值看起来不便宜，但放在中国大模型赛道里，它并没有把智谱的稀缺性完全打满。</p>
+<p>智谱的特殊点有三个。</p>
+<p>第一，它是少数真正“独立”的大模型公司。阿里、百度、字节、腾讯的大模型背后都有巨头生态，资本市场给它们估值时，很难单独拆出模型业务价值。智谱不同，它几乎就是一个纯粹的大模型资产，市场可以更直接地给它定价。</p>
+<p>第二，它不是只有发布会。Barron’s 报道里提到，截至 2025 年 9 月，智谱覆盖 12,000 家企业客户、超过 8,000 万终端设备、全球 4,500 万开发者。这组数字说明它不是一个单纯靠融资和榜单撑起来的实验室项目，而是已经进入客户和开发者网络。</p>
+<p>第三，它的产品体验比市场预期更接近“可用”。我前面做测评时，重点看的不是宣传里的参数，而是几个实际维度：长文本处理、中文语义、代码能力、工具调用、响应稳定性、产品交互和出圈传播。包括一些表情包式的用户传播信号，其实都说明产品已经不只是行业里的人在看，开始被普通用户注意到。</p>
+<p>这类信号，二级市场往往反应慢。市场先看财报，再看新闻，再看股价变化；但产品侧的变化，常常会更早出现。</p>
+<hr>
+<h2 id="早于市场测评的意义不是看榜单是看能不能被用">早于市场测评的意义：不是看榜单，是看“能不能被用”</h2>
+<p>大模型公司最容易让投资者误判的地方，是大家过度关注模型发布，却不够关注使用场景。</p>
+<p>我看智谱，不是因为它某一次榜单更靠前，而是因为它有几个比较少见的组合：</p>
+<ol>
+<li>模型能力能覆盖中文办公、代码、长文本和知识问答；</li>
+<li>产品入口不是空的，用户可以真实体验；</li>
+<li>开源模型持续带来开发者心智；</li>
+<li>政企和行业客户路径相对清晰；</li>
+<li>它不像巨头内部业务那样难以独立估值。</li>
+</ol>
+<p>这五点合在一起，才构成“低估”的基础。</p>
+<p>如果一个大模型公司只有模型能力，没有产品入口，它会变成论文资产；如果只有产品入口，没有模型能力，它会变成套壳应用；如果只有客户项目，没有开源生态，它会变成外包集成商；如果只有开源热度，没有商业化，它会变成社区资产。</p>
+<p>智谱的问题在于每一项都还不完美，但优势在于每一项都不是零。</p>
+<p>这就是它和很多 AI 概念公司的区别：它不是单点强，而是有一个相对完整的面。</p>
+<hr>
+<h2 id="市场给智谱打折主要打在哪里">市场给智谱打折，主要打在哪里</h2>
+<p>市场并不是完全看不见智谱的价值。它真正担心的是三个问题。</p>
+<p>第一个问题是亏损。</p>
+<p>WSJ 报道提到，智谱 2024 年收入翻倍至 3.124 亿元人民币，但亏损扩大至 29.6 亿元人民币。这个结构非常典型：模型公司早期收入增长快，但训练、推理、研发、销售和云资源消耗更快。对二级市场来说，收入翻倍不够，必须看到亏损收窄路径。</p>
+<p>第二个问题是商业化质量。</p>
+<p>大模型公司的收入如果主要来自项目制、定制化和一次性交付，估值应该更接近技术服务公司；如果收入逐渐来自 API、平台订阅、标准化企业产品和行业 Agent，估值才可能接近软件平台公司。智谱要证明的不是“能卖”，而是“能规模化、可复用、毛利率能改善地卖”。</p>
+<p>第三个问题是竞争强度。</p>
+<p>中国大模型市场太挤了。DeepSeek 用极低成本重新定义开源模型效率，阿里、百度、字节有云和流量，MiniMax、Moonshot 也都有各自产品心智。智谱必须证明自己不是“又一个大模型”，而是在政企、开发者、开源和行业模型里有独立位置。</p>
+<p>这些担忧都成立。</p>
+<p>但也正因为这些担忧已经压在股价里，如果产品和商业化有任何超预期，智谱就有估值修复空间。</p>
+<hr>
+<h2 id="7-月解禁低估不等于没有冲击">7 月解禁：低估不等于没有冲击</h2>
+<p>我最在意的风险，是 7 月附近的 6 个月解禁。</p>
+<p>智谱是 2026 年 1 月上市，如果按 6 个月锁定期计算，7 月上旬前后会进入一个重要观察窗口。解禁本身不等于一定下跌，但它会改变股票供需。</p>
+<p>为什么这件事重要？</p>
+<p>因为智谱这种新上市 AI 公司，股价不是只由基本面决定，还由筹码结构决定。上市初期流通盘有限，市场只要有主题和情绪，就容易形成估值弹性。但一旦早期投资者、基石投资者或部分限售筹码进入可交易窗口，市场会担心潜在抛压。</p>
+<p>这里有三种情形。</p>
+<p>第一种，解禁前市场提前担心，股价承压。即便没有真实大规模抛售，只要资金预期 7 月会有卖盘，也会提前降低仓位。</p>
+<p>第二种，解禁后实际卖盘有限，股价反而修复。如果早期股东不急于退出，或者公司同期释放产品、客户、财报利好，那么“靴子落地”可能变成反弹触发点。</p>
+<p>第三种，解禁叠加弱财报或弱情绪，形成双杀。这是最危险的情况：基本面还没证明利润路径，筹码供给又增加，市场会重新要求更低估值。</p>
+<p>所以，我的观点不是无脑看多。</p>
+<p>更准确地说：<strong>智谱当前可能被低估，但 7 月解禁会让这个低估判断接受一次压力测试。</strong></p>
+<hr>
+<h2 id="我会看哪些数据来验证判断">我会看哪些数据来验证判断</h2>
+<p>如果只说“低估”，很容易变成情绪表达。真正需要跟踪的是数据。</p>
+<p>第一，看收入增速和收入结构。2024 年 3.124 亿元人民币收入只是起点，关键是 2025、2026 的增速能否延续，以及标准化产品收入占比是否提升。</p>
+<p>第二，看亏损率。29.6 亿元亏损说明模型业务还在重投入期。市场可以接受亏损，但不能接受亏损无限扩大。只要单位推理成本下降、客户复用率提高、研发费用率趋稳，估值就会改善。</p>
+<p>第三，看客户数量和客户质量。12,000 家企业客户这个数字很重要，但更重要的是其中有多少是续费客户、付费客户、高客单价客户，以及行业解决方案是否可复制。</p>
+<p>第四，看开发者生态。4,500 万开发者和开源模型影响力，是智谱区别于纯 To B 项目公司的关键。如果开发者生态能反哺 API 调用和企业部署，它的估值逻辑就更像平台。</p>
+<p>第五，看产品出圈信号。包括用户自发传播、测评反馈、表情包式扩散、社交媒体讨论。这些看似不严肃，但对 C 端产品和开发者心智很重要。模型公司早期的品牌心智，往往先从这些边缘信号出现。</p>
+<hr>
+<h2 id="我的结论">我的结论</h2>
+<p>我认为智谱的股价存在低估，但这个低估不是因为它便宜，而是因为市场还没有完全理解它的复合价值。</p>
+<p>它不是一个完美公司：亏损大、竞争强、商业化还要验证、7 月解禁有潜在冲击。</p>
+<p>但它也不是一个普通 AI 概念股：它有独立模型资产，有企业客户，有开发者生态，有开源心智，也有真实产品体验。尤其在中国大模型公司还没有大量独立上市标的的情况下，智谱的稀缺性值得更高权重。</p>
+<p>所以我的判断是：</p>
+<ol>
+<li>短期，7 月解禁会压制风险偏好，股价可能波动；</li>
+<li>中期，产品体验和商业化数据如果继续改善，存在估值修复；</li>
+<li>长期，智谱能否从“模型公司”变成“AI 工作流基础设施公司”，决定它是否值得更高估值。</li>
+</ol>
+<p>如果只看 7 月解禁，容易错过低估；如果只看低估，容易忽视筹码冲击。</p>
+<p>真正值得做的，是把两件事放在一起看：<strong>基本面在变好，但供给压力会先来一次考试。</strong></p>
+<hr>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://www.wsj.com/tech/ai/chinese-ai-firm-zhipu-makes-lukewarm-trading-debut-1daf328a">WSJ: Chinese AI Firm Zhipu Makes Lukewarm Trading Debut</a></li>
+<li><a href="https://www.barrons.com/articles/zhipu-ai-hong-kong-ipo-china-minimax-9afc9f02">Barron’s: This Chinese Stock Surges After IPO. More AI Tigers Are on the Way</a></li>
+<li><a href="https://github.com/zai-org/GLM-5">Z.ai / GLM official GitHub repository</a></li>
+</ul>  </div> </article>  </main> <footer class="mt-24 border-t border-[var(--color-border)] py-8 text-sm text-[var(--color-muted)]"> <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-5 sm:flex-row sm:px-6"> <p class="font-mono">© 2026 260516. AI market notes.</p> <div class="flex items-center gap-4"> <a href="/rss.xml" class="hover:text-[var(--color-fg)]">RSS</a> <a href="/sitemap-index.xml" class="hover:text-[var(--color-fg)]">Sitemap</a> </div> </div> </footer> </body></html>
